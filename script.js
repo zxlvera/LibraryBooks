@@ -41,6 +41,9 @@ function addToLibrary() {
 
 window.onload = function () {
 	var storageLib = JSON.parse(localStorage.getItem("myLibrary"));
+	if(storageLib == null) {
+		storageLib = myLibrary;
+	}
 	for(i=0; i<storageLib.length; i++){
 		var row = booklist.insertRow(1);
 		var cell1 = row.insertCell(0);
